@@ -13,7 +13,7 @@ from creds import (
     consumer_secret,
     access_token,
     access_token_secret,
-    message,
+    messages,
     delay
 )
 
@@ -25,7 +25,7 @@ while True:
         tic = time.perf_counter()
         w = random.randint(0, 12345678)
         r = " [{}]".format(w)
-        n = message + r
+        n = random.choice(messages) + r
         t.update_status(status=n)
         toc = time.perf_counter()
         print("Tweeted: {} in {} seconds".format(n, toc-tic))

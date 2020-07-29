@@ -9,3 +9,13 @@
 5. Install [Python 3](https://www.python.org/downloads/)
 6. Run main.py, if pip downloads requirements, let it finish and then run the script again.
 7. Profit?
+---------
+## Example config
+```python
+consumer_key = 'blabla'
+consumer_secret = 'blablabla'
+access_token = 'bla-blabla'
+access_token_secret = 'blablalba'
+messages = ['TweetBot', 'Test']
+delay = '15'
+```
