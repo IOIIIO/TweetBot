@@ -16,6 +16,9 @@ consumer_key = 'blabla'
 consumer_secret = 'blablabla'
 access_token = 'bla-blabla'
 access_token_secret = 'blablalba'
-messages = ['TweetBot', 'Test']
+messages = ['TweetBot', 'Test', 'Fish', 'Blub']
 delay = '15'
+photo = {"TweetBot":"/Users/IOIIIO/Desktop/Icon.jpg", "Fish":"D:\\Images\\fish.png"}
 ```
+
+**Note: Windows paths must use double backslashes to prevent formatting errors in Python**
