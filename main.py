@@ -6,6 +6,7 @@ except:
     import twython
 import time
 import threading
+import random
 
 from creds import (
     consumer_key,
@@ -22,9 +23,12 @@ t = Twython(consumer_key,consumer_secret,access_token,access_token_secret)
 while True:
     try: 
         tic = time.perf_counter()
-        t.update_status(status=message)
+        w = random.randint(0, 12345678)
+        r = " [{}]".format(w)
+        n = message + r
+        t.update_status(status=n)
         toc = time.perf_counter()
-        print("Tweeted: {} in {} seconds".format(message, toc-tic))
+        print("Tweeted: {} in {} seconds".format(n, toc-tic))
     except Exception as e:
         print(e)
     time.sleep(float(delay) - ((time.time() - st) % float(delay)))
