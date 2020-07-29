@@ -21,4 +21,6 @@ delay = '15'
 photo = {"TweetBot":"/Users/IOIIIO/Desktop/Icon.jpg", "Fish":"D:\\Images\\fish.png"}
 ```
 
-**Note: Windows paths must use double backslashes to prevent formatting errors in Python**
+### Note:
+To send images with a tweet, add the message to the key entry in the photo list (before the :), and add the path to the image into the value entry (after the :). \
+**Windows paths must use double backslashes to prevent formatting errors in Python** 
