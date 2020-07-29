@@ -1,5 +1,9 @@
 # TweetBot
 ### A bot that automatically tweets your message with a set interval.
+--------
+
+Because of the random ID being appended to the message, the message will be extended by 4 to 11 characters. Make sure to accomodate for this in your message.
+
 ---------
 ## Setup
 1. Rename creds_clean.py to creds.py
