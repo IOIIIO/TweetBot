@@ -1,9 +1,11 @@
 try:
     from twython import Twython
+    #print("Imported Twython")
 except:
     import os
     os.system("pip3 install twython")
     import twython
+    #print("Downloaded Twython")
 import time
 import threading
 import random
@@ -22,6 +24,14 @@ q = ""
 st = time.time()
 t = Twython(consumer_key,consumer_secret,access_token,access_token_secret)
 
+print("Verifying Credentials")
+try: 
+    t.verify_credentials()
+except Exception as e:
+    print(e)
+    print("Invalid credentials or API Error. \n Failed to sign in.")
+    exit()
+
 while True:
     try: 
         # perf counter start
@@ -34,8 +44,10 @@ while True:
         n = k + r
         # Grab image if message has one and upload
         if k in photo:
+            #print("Found photo, attempting to open.")
             try:
                 d = open(photo[k], 'rb')
+                #print("Opened photo, attempting to send.")
                 try:
                     q = t.upload_media(media=d)
                 except Exception as e:
@@ -45,10 +57,10 @@ while True:
         # Send tweet
         if q == "":
             t.update_status(status=n)
-            z = "with image"
+            z = ""
         else:
             t.update_status(status=n, media_ids=[q['media_id']])
-            z = ""
+            z = "with image"
         # perf counter end
         toc = time.perf_counter()
         print("Tweeted: {} in {} seconds {}".format(n, toc-tic, z))
